@@ -17,17 +17,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="lib/validate-email.js"></script>
     <script>
-      $.fn.validateKeyUp = function () {
-        $(this).keyup(function () {
+        $('#emailValidator').keyup(function () {
           if($(this).isValidEmailAddress()) {
             $(this).css('border', '2px solid green')
           } else {
             $(this).css('border', '2px solid red')
           }
         })
-      }
-
-      $('#emailValidator').validateKeyUp()
     </script>
   </body>
 </html>
