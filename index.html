@@ -11,19 +11,23 @@
     <form>
       <div class="form-group">
         <label for="emailValidator">Email:</label>
-        <input id="emailValidator" class="form-control" type="email" name="email" value="" placeholder="Email address" required="">
+        <input id="emailValidator" class="form-control" type="email" value="" placeholder="Email address" required="">
       </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="lib/validate-email.js"></script>
     <script>
-      $('#emailValidator').keyup(function () {
-        if($('#emailValidator').isValidEmailAddress()) {
-          $('#emailValidator').css('border', '2px solid green')
-        } else {
-          $('#emailValidator').css('border', '2px solid red')
-        }
-      })
+      $.fn.validateKeyUp = function () {
+        $(this).keyup(function () {
+          if($(this).isValidEmailAddress()) {
+            $(this).css('border', '2px solid green')
+          } else {
+            $(this).css('border', '2px solid red')
+          }
+        })
+      }
+      
+      $('#emailValidator').validateKeyUp()
     </script>
   </body>
 </html>
