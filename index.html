@@ -18,7 +18,7 @@
     <script src="lib/validate-email.js"></script>
     <script>
       $.fn.validateKeyUp = function () {
-        this.keyup(function () {
+        $(this).keyup(function () {
           if($(this).isValidEmailAddress()) {
             $(this).css('border', '2px solid green')
           } else {
